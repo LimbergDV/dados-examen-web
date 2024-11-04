@@ -1,0 +1,14 @@
+
+<div class="container">
+  <div *ngFor="let dado of dados" [ngClass]="'cara' + dado.value" class="die-container">
+    <div class="puntos">
+      <div class="punto" *ngFor="let point of [].constructor(dado.value); let i = index"></div>
+    </div>
+    <button class="button is-white" (click)="bloquearDado(dado)">{{ dado.isLocked ? 'Desbloquear' : 'Bloquear' }}</button>
+  </div>
+</div>
+<div class="buttons">
+  <button class="button is-white" (click)="tirarDados()" [disabled]="chances === 0">Lanzar dados</button>
+  <button class="button is-white" (click)="reiniciarJuego()">Reiniciar juego</button>
+</div>
+<p class="chances">Oportunidades restantes: {{ chances }}</p>
