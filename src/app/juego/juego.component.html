@@ -12,3 +12,8 @@
   <button class="button is-white" (click)="reiniciarJuego()">Reiniciar juego</button>
 </div>
 <p class="chances">Oportunidades restantes: {{ chances }}</p>
+
+<h2>Recomendaciones:</h2>
+<ul class="lista">
+  <li *ngFor="let recomendacion of recomendaciones">{{ recomendacion }}</li>
+</ul>
